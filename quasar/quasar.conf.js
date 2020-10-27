@@ -6,17 +6,11 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 /* eslint-env node */
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { configure } = require('quasar/wrappers');
 
-module.exports = configure(function (ctx) {
+module.exports = function (/* ctx */) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
-    supportTS: {
-      tsCheckerConfig: {
-        eslint: true
-      }
-    },
+    supportTS: false,
 
     // https://quasar.dev/quasar-cli/prefetch-feature
     // preFetch: true,
@@ -25,9 +19,8 @@ module.exports = configure(function (ctx) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
-      'composition-api',
-      'i18n',
-      'axios',
+
+      'axios'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -46,7 +39,7 @@ module.exports = configure(function (ctx) {
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       'roboto-font', // optional, you are not bound to it
-      'material-icons', // optional, you are not bound to it
+      'material-icons' // optional, you are not bound to it
     ],
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
@@ -71,22 +64,19 @@ module.exports = configure(function (ctx) {
 
       // https://quasar.dev/quasar-cli/handling-webpack
       extendWebpack (cfg) {
-          // linting is slow in TS projects, we execute it only for production builds
-        if (ctx.prod) {
         cfg.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /node_modules/
         })
-        }
-      },
+      }
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
       https: false,
-      port: xyz-port-var,
+      port: 8088,
       open: true // opens browser window automatically
     },
 
@@ -99,7 +89,7 @@ module.exports = configure(function (ctx) {
       // Possible values for "importStrategy":
       // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
       // * 'all'  - Manually specify what to import
-      importStrategy: 'auto',
+      importStrategy: 'all',
 
       // For special cases outside of where "auto" importStrategy can have an impact
       // (like functional components as one of the examples),
@@ -128,7 +118,7 @@ module.exports = configure(function (ctx) {
       manifest: {
         name: 'xyz-domain-var',
         short_name: 'xyz-domain-var',
-        description: 'quasar with wildfire core',
+        description: 'wildfire core project',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -205,4 +195,4 @@ module.exports = configure(function (ctx) {
       }
     }
   }
-});
+}
