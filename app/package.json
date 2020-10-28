@@ -1,9 +1,9 @@
 {
   "name": "xyz-domain-var",
   "version": "0.0.1",
-  "description": "quasar with wildfire core",
+  "description": "quasar within wildfire core theme",
   "productName": "xyz-domain-var",
-  "author": "tech@wildfire.world",
+  "author": "wildfire team",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",

@@ -25,7 +25,7 @@ module.exports = function (/* ctx */) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
-      'app.scss'
+      'app.sass'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -76,7 +76,7 @@ module.exports = function (/* ctx */) {
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
       https: false,
-      port: 8088,
+      port: xyz-port-var,
       open: true // opens browser window automatically
     },
 
@@ -89,7 +89,7 @@ module.exports = function (/* ctx */) {
       // Possible values for "importStrategy":
       // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
       // * 'all'  - Manually specify what to import
-      importStrategy: 'all',
+      importStrategy: 'auto',
 
       // For special cases outside of where "auto" importStrategy can have an impact
       // (like functional components as one of the examples),
@@ -118,7 +118,7 @@ module.exports = function (/* ctx */) {
       manifest: {
         name: 'xyz-domain-var',
         short_name: 'xyz-domain-var',
-        description: 'wildfire core project',
+        description: 'quasar within wildfire core theme',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
