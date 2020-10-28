@@ -111,14 +111,6 @@
         "input_unique": false
       },
       {
-        "input_slug": "hashtags",
-        "input_type": "multi_tag",
-        "input_placeholder": "Enter tags",
-        "list_field": false,
-        "list_search": false,
-        "list_sort": false
-      },
-      {
         "input_slug": "section",
         "input_type": "select",
         "input_unique": false
